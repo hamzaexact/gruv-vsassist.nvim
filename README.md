@@ -10,11 +10,6 @@ Remaining highlights (such as lua, typescript, js, css, etc.) remain default (Mo
 
 Scheme works with lsp semantic tokens.
 
-## Preview
-
-![preview](showcase/rust/showcase.png?)
-
-
 ## Usage
 
 Install via package manager

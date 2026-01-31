@@ -41,10 +41,7 @@ impl Handler for DefaultHandler {
     }
 }
 
-pub fn process_items<T: Handler>(
-    handler: &T,
-    configs: Vec<Config>,
-) -> HashMap<String, Status> {
+pub fn process_items<T: Handler>(handler: &T, configs: Vec<Config>) -> HashMap<String, Status> {
     let mut results = HashMap::new();
 
     for config in configs {

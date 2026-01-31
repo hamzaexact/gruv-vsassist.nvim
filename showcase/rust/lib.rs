@@ -2,12 +2,12 @@ use std::collections::HashMap;
 use std::sync::Arc;
 
 pub mod config;
-pub mod handler;
 pub mod error;
+pub mod handler;
 
 pub use config::Config;
-pub use handler::Handler;
 pub use error::Error;
+pub use handler::Handler;
 
 pub trait Service {
     fn start(&mut self) -> Result<(), Error>;
