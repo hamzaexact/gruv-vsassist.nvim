@@ -838,4 +838,10 @@ theme.link_highlight = function()
     hl(0, "@lsp.type.operator", { link = "@operator" })
 end
 
+-- lots of hl(...) calls above
+hl(0, "@keyword.return.rust", { fg = c.customGreen })
+
+-- 🔒 IMPORTANT: neutralize LSP keyword coloring
+vim.api.nvim_set_hl(0, "@lsp.type.keyword", {})
+vim.api.nvim_set_hl(0, "@lsp.type.keyword.rust", {})
 return theme
