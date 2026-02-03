@@ -779,7 +779,10 @@ theme.link_highlight = function()
     -- Rust LSP semantic tokens
     hl(0, "@lsp.type.selfKeyword.rust", { link = "@keyword" })
     hl(0, "@lsp.type.builtinType.rust", { link = "@type.builtin.rust" })
-    hl(0, "@lsp.type.namespace.rust", { link = "@namespace.rust" })
+    hl(0, "@lsp.type.namespace.rust", {
+  fg = c.customGreen,
+  bg = "NONE",
+})
     hl(0, "@lsp.type.lifetime.rust", { link = "@text" })
     hl(0, "@lsp.typemod.lifetime.declaration.rust", { link = "@text" })
     hl(0, "@lsp.typemod.variable.mutable.rust", { link = "@variable" })
