@@ -788,8 +788,18 @@ theme.link_highlight = function()
     -- hl(0, "@lsp.type.macro.rust", { fg = c.gruvPurple, bg = "NONE" })
     -- hl(0, "@lsp.type.attribute.rust", { fg = c.vsaGold, bg = "NONE" })
     -- hl(0, "@lsp.type.derive.rust", { fg = c.vsaOrange, bg = "NONE" })
-     vim.api.nvim_set_hl(0, "@lsp.type.keyword", {})
-  vim.api.nvim_set_hl(0, "@lsp.type.keyword.rust", {})
+    local lsp_kill = {
+      "keyword",
+      "namespace",
+      "module",
+      "operator",
+      "property",
+    }
+
+    for _, name in ipairs(lsp_kill) do
+      vim.api.nvim_set_hl(0, "@lsp.type." .. name, {})
+      vim.api.nvim_set_hl(0, "@lsp.type." .. name .. ".rust", {})
+    end
 end
 
 return theme
