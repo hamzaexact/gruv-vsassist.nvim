@@ -727,6 +727,10 @@ theme.set_highlights = function(opts)
         -- white fg and lualine blue bg
         hl(0, "FocusedSymbol", { fg = c.vscBack, bg = "#AF00DB" })
         hl(0, "SymbolsOutlineConnector", { fg = c.vscTabOther, bg = "NONE" })
+            vim.api.nvim_set_hl(0, "@lsp.type.decorator.rust", {
+  fg = c.vsaPurple,
+  bg = "NONE",
+})
     end
 end
 
@@ -798,10 +802,6 @@ theme.link_highlight = function()
       "macro",
     }
 
-    vim.api.nvim_set_hl(0, "@lsp.type.decorator.rust", {
-  fg = c.vsaPurple,
-  bg = "NONE",
-})
     for _, name in ipairs(lsp_kill) do
       vim.api.nvim_set_hl(0, "@lsp.type." .. name, {})
       vim.api.nvim_set_hl(0, "@lsp.type." .. name .. ".rust", {})
