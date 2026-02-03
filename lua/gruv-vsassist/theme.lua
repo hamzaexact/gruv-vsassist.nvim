@@ -162,8 +162,8 @@ theme.set_highlights = function(opts)
     
     -- Rust - Enhanced TreeSitter groups
     hl(0, "@attribute.rust", { fg = c.vsaGold, bg = "NONE" })
-    hl(0, "@boolean.rust", { fg = c.gruvRed, bg = "NONE" })
-    hl(0, "@constant.rust", { fg = c.vsaLightGreen, bg = "NONE" })
+    hl(0, "@boolean.rust", { fg = c.customGreen, bg = "NONE" })
+    hl(0, "@constant.rust", { fg = c.customGreen, bg = "NONE" })
     hl(0, "@constant.builtin.rust", { fg = c.vsaLightGreen, bg = "NONE" })
     hl(0, "@constant.macro.rust", { fg = c.gruvPurple, bg = "NONE" })
     hl(0, "@constructor.rust", { fg = c.gruvPurple, bg = "NONE" })
