@@ -80,7 +80,8 @@ colors.get_colors = function()
         vsaOrange = "#ff8000",
         vsaLightGreen = "#b8d7a3",
         vsaSoftYellow = "#BCC07E",
-        customGreen = "#1F999D",
+        customGreen = "#4ECAB1",
+        customDarkGreen ="#1F999D",
         vsaSoftYellowAlt = "#A6B895",
 
         -- Gruvbox specific
