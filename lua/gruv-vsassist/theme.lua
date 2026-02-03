@@ -6,6 +6,7 @@ theme.set_highlights = function(opts)
     c = vim.tbl_extend("force", c, opts["color_overrides"])
     local isDark = vim.o.background == "dark"
 
+
     hl(0, "Normal", { fg = c.vscFront, bg = c.vscBack })
     hl(0, "ColorColumn", { fg = "NONE", bg = c.vscCursorDarkDark })
     hl(0, "Cursor", { fg = c.vscCursorDark, bg = c.vscCursorLight })
@@ -72,7 +73,7 @@ theme.set_highlights = function(opts)
     hl(0, "Type", { fg = c.vsaGold, bg = "NONE" })
     hl(0, "StorageClass", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "Structure", { fg = c.vsaGold, bg = "NONE" })
-    hl(0, "Typedef", { fg = c.vsaGold, bg = "NONE" })
+    hl(0, "Typedef", { fg = c.vsaBrown, bg = "NONE" })
     hl(0, "Special", { fg = c.vscYellowOrange, bg = "NONE" })
     hl(0, "SpecialChar", { fg = c.vscYellowOrange, bg = "NONE" })
     hl(0, "Tag", { fg = c.vscFront, bg = "NONE" })
@@ -90,81 +91,85 @@ theme.set_highlights = function(opts)
     hl(0, "SpellLocal", { fg = c.vscRed, bg = c.vscBack, undercurl = true, sp = c.vscRed })
     hl(0, "Whitespace", { fg = isDark and c.vscLineNumber or c.vscTabOther })
 
-    -- Treesitter
-    hl(0, "@error", { fg = c.vscRed, bg = "NONE" })
-    hl(0, "@preproc", { fg = c.gruvRed, bg = "NONE" })
-    hl(0, "@define", { fg = c.gruvRed, bg = "NONE" })
-    hl(0, "@punctuation.bracket", { fg = c.vscGray, bg = "NONE" })
-    hl(0, "@punctuation.special", { fg = c.vscGray, bg = "NONE" })
+        -- Treesitter
+    hl(0, "@annotation", { fg = c.vsaGold, bg = "NONE" })
+    hl(0, "@attribute", { fg = c.vsaG, bg = "NONE" })
+    hl(0, "@boolean", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@character", { fg = c.vscOrange, bg = "NONE" })
+    hl(0, "@character.special", { fg = c.vscYellowOrange, bg = "NONE" })
     hl(0, "@comment", { fg = c.vscGreen, bg = "NONE", italic = opts.italic_comments })
+    hl(0, "@conditional", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "@constant", { fg = c.vsaLightGreen, bg = "NONE" })
     hl(0, "@constant.builtin", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "@constant.macro", { fg = c.gruvPurple, bg = "NONE" })
-    hl(0, "@string.regex", { fg = c.vsaLightGreen, bg = "NONE" })
-    hl(0, "@string", { fg = c.vscOrange, bg = "NONE" })
-    hl(0, "@character", { fg = c.vscOrange, bg = "NONE" })
-    hl(0, "@character.special", { fg = c.vscYellowOrange, bg = "NONE" })
-    hl(0, "@number", { fg = c.gruvPurple, bg = "NONE" })
-    hl(0, "@boolean", { fg = c.gruvRed, bg = "NONE" })
-    hl(0, "@float", { fg = c.gruvPurple, bg = "NONE" })
-    hl(0, "@annotation", { fg = c.vsaGold, bg = "NONE" })
-    hl(0, "@attribute", { fg = c.vsaPurple, bg = "NONE" })
-    hl(0, "@namespace", { fg = c.gruvBlue, bg = "NONE" })
-    hl(0, "@module", { fg = c.gruvBlue, bg = "NONE" })
-    hl(0, "@function.builtin", { fg = c.vsaGold, bg = "NONE" })
-    hl(0, "@function", { fg = c.vsaGold, bg = "NONE" })
-    hl(0, "@function.macro", { fg = c.gruvPurple, bg = "NONE" })
-    hl(0, "@function.call", { fg = c.vsaGold, bg = "NONE" })
-    hl(0, "@parameter", { fg = c.gruvFg1, bg = "NONE" })
-    hl(0, "@parameter.reference", { fg = c.gruvFg1, bg = "NONE" })
-    hl(0, "@method", { fg = c.vsaOrange, bg = "NONE" })
-    hl(0, "@method.call", { fg = c.vsaOrange, bg = "NONE" })
-    hl(0, "@field", { fg = c.gruvFg1, bg = "NONE" })
-    hl(0, "@property", { fg = c.gruvFg1, bg = "NONE" })
     hl(0, "@constructor", { fg = c.gruvPurple, bg = "NONE" })
-    hl(0, "@conditional", { fg = c.gruvRed, bg = "NONE" })
-    hl(0, "@repeat", { fg = c.gruvPurple, bg = "NONE" })
-    hl(0, "@label", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@define", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@error", { fg = c.vscRed, bg = "NONE" })
+    hl(0, "@exception", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@field", { fg = c.gruvFg1, bg = "NONE" })
+    hl(0, "@float", { fg = c.gruvPurple, bg = "NONE" })
+    hl(0, "@function", { fg = c.vsaOrange, bg = "NONE" })
+    hl(0, "@function.builtin", { fg = c.vsaGold, bg = "NONE" })
+    hl(0, "@function.call", { fg = c.vsaGold, bg = "NONE" })
+    hl(0, "@function.macro", { fg = c.gruvPurple, bg = "NONE" })
+    hl(0, "@include", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "@keyword", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@keyword.coroutine", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "@keyword.function", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "@keyword.operator", { fg = c.gruvRed, bg = "NONE" })
-    hl(0, "@keyword.coroutine", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "@keyword.return", { fg = c.gruvPurple, bg = "NONE" })
+    hl(0, "@label", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@method", { fg = c.vsaOrange, bg = "NONE" })
+    hl(0, "@method.call", { fg = c.vsaOrange, bg = "NONE" })
+    hl(0, "@module", { fg = c.gruvBlue, bg = "NONE" })
+    hl(0, "@namespace", { fg = c.customGreen, bg = "NONE" })
+    hl(0, "@number", { fg = c.gruvPurple, bg = "NONE" })
     hl(0, "@operator", { fg = c.vscGray, bg = "NONE" })
-    hl(0, "@exception", { fg = c.gruvRed, bg = "NONE" })
-    hl(0, "@type", { fg = c.vsaGold, bg = "NONE" })
-    hl(0, "@type.builtin", { fg = c.gruvRed, bg = "NONE" })
-    hl(0, "@type.qualifier", { fg = c.gruvRed, bg = "NONE" })
-    hl(0, "@type.definition", { fg = c.vsaGold, bg = "NONE" })
+    hl(0, "@parameter", { fg = c.vsaSoftYellow, bg = "NONE" })
+    hl(0, "@parameter.reference", { fg = c.gruvFg1, bg = "NONE" })
+    hl(0, "@preproc", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@property", { fg = c.gruvFg1, bg = "NONE" })
+    hl(0, "@punctuation.bracket", { fg = c.vscGray, bg = "NONE" })
+    hl(0, "@punctuation.special", { fg = c.vscGray, bg = "NONE" })
+    hl(0, "@repeat", { fg = c.gruvPurple, bg = "NONE" })
     hl(0, "@storageClass", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@string", { fg = c.vscOrange, bg = "NONE" })
+    hl(0, "@string.regex", { fg = c.vsaLightGreen, bg = "NONE" })
     hl(0, "@structure", { fg = c.vsaGold, bg = "NONE" })
-    hl(0, "@include", { fg = c.gruvRed, bg = "NONE" })
-    hl(0, "@variable", { fg = c.gruvBlue, bg = "NONE" })
-    hl(0, "@variable.builtin", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@tag", { fg = c.vscYellowOrange, bg = "NONE" })
+    hl(0, "@tag.attribute", { fg = c.vscLightBlue, bg = "NONE" })
+    hl(0, "@tag.delimiter", { fg = c.vscGray, bg = "NONE" })
     hl(0, "@text", { fg = c.vscFront, bg = "NONE" })
     hl(0, "@text.underline", { fg = c.vscYellowOrange, bg = "NONE" })
-    hl(0, "@tag", { fg = c.vscYellowOrange, bg = "NONE" })
-    hl(0, "@tag.delimiter", { fg = c.vscGray, bg = "NONE" })
-    hl(0, "@tag.attribute", { fg = c.vscLightBlue, bg = "NONE" })
+    hl(0, "@type", { fg = c.vsaPurple, bg = "NONE" })
+    hl(0, "@type.builtin", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@type.definition", { fg = c.vsaGold, bg = "NONE" })
+    hl(0, "@type.qualifier", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@variable", { fg = c.vsCustomIdk, bg = "NONE" })
+    hl(0, "@variable.builtin", { fg = c.gruvRed, bg = "NONE" })
 
     hl(0, "@definition.constant", { fg = c.gruvBlue, bg = "NONE" })
-    hl(0, "@definition.function", { fg = c.vsaGold, bg = "NONE" })
-    hl(0, "@definition.method", { fg = c.vsaOrange, bg = "NONE" })
-    hl(0, "@definition.var", { fg = c.gruvBlue, bg = "NONE" })
-    hl(0, "@definition.parameter", { fg = c.gruvFg1, bg = "NONE" })
-    hl(0, "@definition.macro", { fg = c.gruvPurple, bg = "NONE" })
-    hl(0, "@definition.type", { fg = c.vsaGold, bg = "NONE" })
-    hl(0, "@definition.field", { fg = c.gruvFg1, bg = "NONE" })
     hl(0, "@definition.enum", { fg = c.vsaLightGreen, bg = "NONE" })
-    hl(0, "@definition.namespace", { fg = c.gruvFg1, bg = "NONE" })
+    hl(0, "@definition.field", { fg = c.gruvFg1, bg = "NONE" })
+    hl(0, "@definition.function", { fg = c.vsaGold, bg = "NONE" })
     hl(0, "@definition.import", { fg = c.gruvRed, bg = "NONE" })
-
+    hl(0, "@definition.macro", { fg = c.gruvPurple, bg = "NONE" })
+    hl(0, "@definition.method", { fg = c.vsaOrange, bg = "NONE" })
+    hl(0, "@definition.namespace", { fg = c.gruvFg1, bg = "NONE" })
+    hl(0, "@definition.parameter", { fg = c.gruvFg1, bg = "NONE" })
+    hl(0, "@definition.type", { fg = c.vsaGold, bg = "NONE" })
+    hl(0, "@definition.var", { fg = c.gruvBlue, bg = "NONE" })
+    -----
+    -----
+    -----
+    -----
     
+    -----
     -- Rust - Enhanced TreeSitter groups
     hl(0, "@attribute.rust", { fg = c.vsaGold, bg = "NONE" })
-    hl(0, "@boolean.rust", { fg = c.gruvRed, bg = "NONE" })
-    hl(0, "@constant.rust", { fg = c.customGreen, bg = "NONE" })
-    hl(0, "@constant.builtin.rust", { fg = c.vsaLightGreen, bg = "NONE" })
+    hl(0, "@boolean.rust", { fg = c.customGreen, bg = "NONE" })
+    hl(0, "@constant.rust", { fg = c.vsaPurple, bg = "NONE" })
+    hl(0, "@constant.builtin.rust", { fg = c.customRed, bg = "NONE" })
     hl(0, "@constant.macro.rust", { fg = c.gruvPurple, bg = "NONE" })
     hl(0, "@constructor.rust", { fg = c.gruvPurple, bg = "NONE" })
     hl(0, "@field.rust", { fg = c.gruvFg1, bg = "NONE" })
@@ -175,9 +180,11 @@ theme.set_highlights = function(opts)
     hl(0, "@function.macro.rust", { fg = c.vsaPurple, bg = "NONE" }) 
     hl(0, "@keyword.rust", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "@keyword.function.rust", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@variable.member.rust", { fg = c.customGreen, bg = "NONE" })  -- struct fields (more specific than @field)
     hl(0, "@keyword.return.rust", { fg = c.customGreen, bg = "NONE" }) 
     hl(0, "@keyword.import.rust", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "@keyword.storage.rust", { fg = c.gruvRed, bg = "NONE" })
+    hl(0, "@keyword.modifier.rust", { fg = c.vscBlue, bg = "NONE" })  -- pub, const, static, mut, unsafe
     hl(0, "@label.rust", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "@method.rust", { fg = c.vsaSoftYellowAlt, bg = "NONE" })
     hl(0, "@method.call.rust", { fg = c.vsaSoftYellowAlt, bg = "NONE" })
@@ -195,6 +202,7 @@ theme.set_highlights = function(opts)
     hl(0, "@type.builtin.rust", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "@type.qualifier.rust", { fg = c.gruvRed, bg = "NONE" })
     hl(0, "@variable.rust", { fg = c.gruvFg1, bg = "NONE" })
+
 
     -- LaTeX
     hl(0, "@error.latex", { link = "@error" })
@@ -723,18 +731,37 @@ theme.set_highlights = function(opts)
         hl(0, "Pmenu", { fg = "NONE", bg = c.vscPopupBack })
         hl(0, "PmenuSel", { fg = "#FFFFFF", bg = "#285EBA" })
 
-        -- symbols-outline
-        -- white fg and lualine blue bg
-        hl(0, "FocusedSymbol", { fg = c.vscBack, bg = "#AF00DB" })
-        hl(0, "SymbolsOutlineConnector", { fg = c.vscTabOther, bg = "NONE" })
-            vim.api.nvim_set_hl(0, "@lsp.type.decorator.rust", {
+        vim.api.nvim_set_hl(0, "@lsp.type.typeAlias.rust", {
+  fg = c.customGreen,
+  bg = "NONE",
+})
+
+hl(0, "FocusedSymbol", {
+  fg = c.vscBack,
+  bg = "#AF00DB",
+})
+
+hl(0, "SymbolsOutlineConnector", {
+  fg = c.vscTabOther,
+  bg = "NONE",
+})
+
+vim.api.nvim_set_hl(0, "@lsp.type.decorator.rust", {
   fg = c.vsaPurple,
   bg = "NONE",
 })
+        -- symbols-outline
+        -- white fg and lualine blue bg
+            vim.api.nvim_set_hl(0, "@lsp.mod.crateRoot.rust", {
+  fg = c.customGreen,
+  bg = "NONE",
+})
+
     end
 end
 
 theme.link_highlight = function()
+  local c = require("gruv-vsassist.colors").get_colors()
     -- Legacy groups for official git.vim and diff.vim syntax
     hl(0, "diffAdded", { link = "DiffAdd" })
     hl(0, "diffChanged", { link = "DiffChange" })
@@ -761,6 +788,7 @@ theme.link_highlight = function()
 
     -- LSP semantic tokens
     hl(0, "@lsp.type.class", { link = "@type" })
+    hl(0, "@lsp.typemod.namespace.defaultLibrary.rust",{ link = "@Customtype1" })
     hl(0, "@lsp.type.comment", { link = "@comment" })
     -- hl(0, "@lsp.type.decorator", { link = ""})
     hl(0, "@lsp.type.enum", { link = "@type" })
@@ -794,11 +822,11 @@ theme.link_highlight = function()
     -- hl(0, "@lsp.type.attribute.rust", { fg = c.vsaGold, bg = "NONE" })
     -- hl(0, "@lsp.type.derive.rust", { fg = c.vsaOrange, bg = "NONE" })
     local lsp_kill = {
-      "keyword",
-      "namespace",
-      "module",
-      "operator",
-      "property",
+      -- "keyword",
+      -- "namespace",
+      -- "module",
+      -- "operator",
+      -- "property",
       "macro",
     }
 
@@ -806,6 +834,25 @@ theme.link_highlight = function()
       vim.api.nvim_set_hl(0, "@lsp.type." .. name, {})
       vim.api.nvim_set_hl(0, "@lsp.type." .. name .. ".rust", {})
     end
-end
+        vim.api.nvim_set_hl(0, "@lsp.type.typeAlias.rust", {
+      fg = c.customGreen,
+      bg = "NONE",
+    })
+
+    vim.api.nvim_set_hl(0, "@lsp.type.decorator.rust", {
+      fg = c.customGreen,
+      bg = "NONE",
+    })
+
+    vim.api.nvim_set_hl(0, "@lsp.mod.crateRoot.rust", {
+      fg = c.customGreen,
+      bg = "NONE",
+    })
+    vim.api.nvim_set_hl(0, "@lsp.typemod.struct.public.rust", {
+      fg = c.customPurple,
+      bg = "NONE",
+    })
+
+    end
 
 return theme
