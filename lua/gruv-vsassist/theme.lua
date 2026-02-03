@@ -464,8 +464,8 @@ theme.set_highlights = function(opts)
     hl(0, "rustModPathSep", { fg = c.vscGray, bg = "NONE" })
     hl(0, "rustAssert", { fg = c.gruvPurple, bg = "NONE" })
     hl(0, "rustDeriveHelper", { fg = c.vsaSoftYellowAlt, bg = "NONE" })
-    hl(0, "rustModPath", { fg = c.gruvBlue, bg = "NONE" })
-    hl(0, "rustPath", { fg = c.gruvBlue, bg = "NONE" })
+    hl(0, "rustModPath", { fg = c.customGreen, bg = "NONE" })
+    hl(0, "rustPath", { fg = c.customGreen, bg = "NONE" })
 
     -- TeX
     hl(0, "texStatement", { fg = c.vscBlue, bg = "NONE" })
