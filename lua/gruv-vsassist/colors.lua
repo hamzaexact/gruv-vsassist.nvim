@@ -80,10 +80,12 @@ colors.get_colors = function()
         vsaOrange = "#ff8000",
         vsaLightGreen = "#b8d7a3",
         vsaSoftYellow = "#BCC07E",
+        customGreen = "#4ECAB1",
         vsaSoftYellowAlt = "#A6B895",
 
         -- Gruvbox specific
         gruvBlue = "#83a598",
+        gruvCustomWhite = "#ffffffff",
         gruvRed = "#fb4934",
         gruvPurple = "#d3869b",
         gruvFg1 = "#dfd9c2", -- Dirty white
