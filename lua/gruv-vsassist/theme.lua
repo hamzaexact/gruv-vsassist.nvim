@@ -798,6 +798,10 @@ theme.link_highlight = function()
       "macro",
     }
 
+    vim.api.nvim_set_hl(0, "@lsp.type.decorator.rust", {
+  fg = c.vsaPurple,
+  bg = "NONE",
+})
     for _, name in ipairs(lsp_kill) do
       vim.api.nvim_set_hl(0, "@lsp.type." .. name, {})
       vim.api.nvim_set_hl(0, "@lsp.type." .. name .. ".rust", {})
