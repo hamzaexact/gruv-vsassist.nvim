@@ -836,12 +836,14 @@ theme.link_highlight = function()
     hl(0, "@lsp.type.escapeSequence", { link = "@string.escape" })
     hl(0, "@lsp.type.formatSpecifier", { link = "@punctuation.special" })
     hl(0, "@lsp.type.operator", { link = "@operator" })
+
+        -- lots of hl(...) calls above
+    hl(0, "@keyword.return.rust", { fg = c.customGreen })
+
+    -- 🔒 IMPORTANT: neutralize LSP keyword coloring
+    vim.api.nvim_set_hl(0, "@lsp.type.keyword", {})
+    vim.api.nvim_set_hl(0, "@lsp.type.keyword.rust", {})
 end
 
--- lots of hl(...) calls above
-hl(0, "@keyword.return.rust", { fg = c.customGreen })
 
--- 🔒 IMPORTANT: neutralize LSP keyword coloring
-vim.api.nvim_set_hl(0, "@lsp.type.keyword", {})
-vim.api.nvim_set_hl(0, "@lsp.type.keyword.rust", {})
 return theme
