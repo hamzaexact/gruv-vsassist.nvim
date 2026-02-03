@@ -795,6 +795,7 @@ theme.link_highlight = function()
       "module",
       "operator",
       "property",
+      "macro",
     }
 
     for _, name in ipairs(lsp_kill) do
